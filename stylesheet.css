@@ -1,0 +1,136 @@
+body {
+    min-height: 100%;
+
+    background: linear-gradient(cyan,lightgreen);
+}
+html {
+    height: 100%;
+}
+div{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+table{
+  align-self: center;
+  table-layout: fixed;
+  width: 75%;
+  margin: auto;
+}
+button{
+  align-self: center;
+  color: white;
+  background: darkred;
+  font-size: 14px;
+  border: none;
+
+}
+button:hover{
+  opacity: .25;
+}
+#game{
+  background: white;
+}
+td.red {
+  background: red;
+  padding: 50px;
+}
+td.green {
+  background: green;
+  padding: 50px;
+}
+td.yellow {
+  background: yellow;
+  padding: 50px;
+}
+td.blue {
+  background: blue;
+  padding: 50px;
+}
+td.indigo {
+  background: indigo;
+  padding: 50px;
+}
+td.orange {
+  background: orange;
+  padding: 50px;
+}
+td.pink {
+  background: pink;
+  padding: 50px;
+}
+td.purple {
+  background: purple;
+  padding: 50px;
+}
+td.red:hover {
+  position: absolute;
+  z-index: 200;
+  background: red;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.green:hover {
+  position: absolute;
+  z-index: 200;
+  background: green;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.yellow:hover {
+  position: absolute;
+  z-index: 200;
+  background: yellow;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.blue:hover {
+  position: absolute;
+  z-index: 200;
+  background: blue;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.indigo:hover {
+  position: absolute;
+  z-index: 200;
+  background: indigo;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.orange:hover {
+  position: absolute;
+  z-index: 200;
+  background: orange;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.pink:hover {
+  position: absolute;
+  z-index: 200;
+  background: pink;
+  padding: 60px;
+  border: 4px solid black;
+}
+td.purple:hover {
+  position: absolute;
+  z-index: 200;
+  background: purple;
+  padding: 60px;
+  border: 4px solid black;
+}
+h2 {
+  text-shadow: 4px 4px 8px black;
+  animation:colors 10s linear infinite;
+  /*animation:height 15s linear infinite;*/
+}
+@keyframes colors {
+  0%,100% {color:red; }
+  14% {color:orange;}
+  28% {color:yellow;}
+  42% {color:green;}
+  56% {color:blue;}
+  70% {color:indigo;}
+  84% {color:violet;}
+}

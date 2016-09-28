@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Color Picker Game</title>
+        <link rel="stylesheet" href="stylesheet.css" />
+        <script src="jquery-3.1.0.js"></script>
+        <script src='game.js'></script>
+    </head>
+
+    <body>
+        <div>
+
+
+            <header>
+                <h1>Color Picker</h1>
+            </header>
+            <p id='instructions'>
+                The name of the game is color picker. You will be asked to pick a color for ones diplayed. Chose the correct one and you can play again. If you get it wrong you can keep trying. You can chose a difficulty level.
+            </p>
+            <table id='difficulty'>
+                <tr>
+                    <td>
+                        <button class='easy'>Easy Mode</button>
+                    </td>
+                    <td>
+                        <button class="intermediate">Intermediate</button>
+                    </td>
+                    <td>
+                        <button class="hard">Hard Mode</button>
+                    </td>
+                </tr>
+            </table>
+
+            <h2><span id='colorToPick'></span></h2>
+
+            <h3><span id='rightorwrong'></span></h3>
+
+            <table id='game'>
+
+            </table>
+            <div id="again">
+
+            </div>
+        </div>
+    </body>
+
+</html>
