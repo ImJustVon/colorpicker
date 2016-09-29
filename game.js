@@ -1,7 +1,8 @@
 var $choice;
 var max;
-var min = 0;
+
 var color;
+var num;
 $(document).ready(function(){
   //listens for click on difficulty selector then runs the difficulty based on button clicked
   $('button').click(function(){
@@ -17,14 +18,16 @@ $(document).ready(function(){
       makeHardMode();
     }
     //appends dom with chosen color
-    choseColor(min,max);
+    choseColor(max);
 
   })
 
-  $('#game').on('click', 'td', function(){
+  $('#game').on('click', 'div', function(){
     if ($(this).hasClass(color)){
       $('#rightorwrong').empty();
       $('#rightorwrong').append('You are correct!');
+      changeColor($(this));
+      setTimeout(removeColor, 2000, $(this));
       $('#again').append('<button>Again?</button>');
 
     } else {
@@ -37,54 +40,78 @@ $(document).ready(function(){
 $('#again').on('click', 'button', function(){
   $('#rightorwrong').empty();
   $('#colorToPick').empty();
-  choseColor(min,max);
+  choseColor(max);
   $(this).parent().empty();
 })
 
 })
+var $red = '<div class="red"></div>';
+var $green = '<div class="green"></div>';
+var $yellow = '<div class="yellow"></div>';
+var $blue = '<div class="blue"></div>';
+var $orange = '<div class="orange"></div>';
+var $indigo = '<div class="indigo"></div>';
+var $purple = '<div class="purple"></div>';
+var $pink = '<div class="pink"></div>';
+var colorDivs = [$red,$green,$yellow,$blue,$orange,$indigo,$purple,$pink];
 //crates easy mode
 function makeEasyMode() {
-  var $game = $('<tr></tr>');
-  $game = $game.append('<td class="red"></td>');
-  $game = $game.append('<td class="green"></td>');
-  $game = $game.append('<td class="yellow"></td>');
-  $game = $game.append('<td class="blue"></td>');
-  $('#game').append($game);
   max = 3;
+  var numbersArray = [];
+
+  while (numbersArray.length<4) {
+    num = randomNumber(max);
+    if (numbersArray.every(check)){
+      $('#game').append(colorDivs[num]);
+      numbersArray.push(num);
+    }
+  }
 }
 //creates intermediate level
 function makeIntermediate() {
-  var $game = $('<tr></tr>');
-  $game = $game.append('<td class="red"></td>');
-  $game = $game.append('<td class="green"></td>');
-  $game = $game.append('<td class="yellow"></td>');
-  $game = $game.append('<td class="blue"></td>');
-  $game = $game.append('<td class="orange"></td>');
-  $game = $game.append('<td class="indigo"></td>');
-  $('#game').append($game);
   max = 5;
+  var numbersArray = [];
+
+  while (numbersArray.length<6) {
+    num = randomNumber(max);
+    if (numbersArray.every(check)){
+      $('#game').append(colorDivs[num]);
+      numbersArray.push(num);
+    }
+  }
 }
 //creates hard mode
 function makeHardMode() {
-  var $game = $('<tr></tr>');
-  $game = $game.append('<td class="red"></td>');
-  $game = $game.append('<td class="green"></td>');
-  $game = $game.append('<td class="yellow"></td>');
-  $game = $game.append('<td class="blue"></td>');
-  $game = $game.append('<td class="orange"></td>');
-  $game = $game.append('<td class="indigo"></td>');
-  $game = $game.append('<td class="purple"></td>');
-  $game = $game.append('<td class="pink"></td>');
-  $('#game').append($game);
   max = 7;
+  var numbersArray = [];
+
+  while (numbersArray.length<8) {
+    num = randomNumber(max);
+    if (numbersArray.every(check)){
+      $('#game').append(colorDivs[num]);
+      numbersArray.push(num);
+    }
+  }
 }
 //sets color to be the name of the class chosen and appends dom
-function choseColor(min,max){
-  var index = randomNumber(min, max);
-  $choice = $('td').eq(index);
+function choseColor(max){
+  var index = randomNumber(max);
+  $choice = $('div > div').eq(index);
+  console.log($choice);
   color = $choice.attr('class');
   $('#colorToPick').append(color);
 }
-function randomNumber(min, max){
-    return Math.floor(Math.random() * (1 + max - min) + min);
+function randomNumber(max){
+    return Math.floor(Math.random() * (1 + max - 0) + 0);
+}
+function changeColor($object){
+  $object.removeClass(color);
+  $object.addClass('toggle');
+}
+function removeColor($object){
+  $object.addClass(color);
+  $object.removeClass('toggle');
+}
+function check(value){
+  return value != num;
 }

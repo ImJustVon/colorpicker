@@ -11,6 +11,7 @@ div{
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+
 }
 table{
   align-self: center;
@@ -30,99 +31,122 @@ button:hover{
   opacity: .25;
 }
 #game{
-  background: white;
+  margin: 100px;
+  width: 88%;
 }
-td.red {
+div.red {
   background: red;
   padding: 50px;
+  display: inline;
 }
-td.green {
+div.green {
   background: green;
   padding: 50px;
+display: inline;
 }
-td.yellow {
+div.yellow {
+  display: inline;
   background: yellow;
   padding: 50px;
 }
-td.blue {
+div.blue {
+  display: inline;
   background: blue;
   padding: 50px;
 }
-td.indigo {
+div.indigo {
+  display: inline;
   background: indigo;
   padding: 50px;
 }
-td.orange {
+div.orange {
+  display: inline;
   background: orange;
   padding: 50px;
 }
-td.pink {
+div.pink {
+  display: inline;
   background: pink;
   padding: 50px;
 }
-td.purple {
+div.purple {
   background: purple;
   padding: 50px;
+display: inline;
 }
-td.red:hover {
-  position: absolute;
-  z-index: 200;
+div.red:hover {
+  display: inline;
+
+
   background: red;
   padding: 60px;
   border: 4px solid black;
 }
-td.green:hover {
-  position: absolute;
-  z-index: 200;
+div.green:hover {
+  display: inline;
+
+
   background: green;
   padding: 60px;
   border: 4px solid black;
 }
-td.yellow:hover {
-  position: absolute;
-  z-index: 200;
+div.yellow:hover {
+  display: inline;
+
+
   background: yellow;
   padding: 60px;
   border: 4px solid black;
 }
-td.blue:hover {
-  position: absolute;
-  z-index: 200;
+div.blue:hover {
+  display: inline;
+
+
   background: blue;
   padding: 60px;
   border: 4px solid black;
 }
-td.indigo:hover {
-  position: absolute;
-  z-index: 200;
+div.indigo:hover {
+  display: inline;
+
+
   background: indigo;
   padding: 60px;
   border: 4px solid black;
 }
-td.orange:hover {
-  position: absolute;
-  z-index: 200;
+div.orange:hover {
+  display: inline;
+
+
   background: orange;
   padding: 60px;
   border: 4px solid black;
 }
-td.pink:hover {
-  position: absolute;
-  z-index: 200;
+div.pink:hover {
+  display: inline;
+
+
   background: pink;
   padding: 60px;
   border: 4px solid black;
 }
-td.purple:hover {
-  position: absolute;
-  z-index: 200;
+div.purple:hover {
+  display: inline;
+
+
   background: purple;
   padding: 60px;
   border: 4px solid black;
+}
+.toggle{
+  animation: color 2s linear;
+  padding: 50px;
+display: inline;
 }
 h2 {
   text-shadow: 4px 4px 8px black;
   animation:colors 10s linear infinite;
+  padding: 50px;
   /*animation:height 15s linear infinite;*/
 }
 @keyframes colors {
@@ -133,4 +157,13 @@ h2 {
   56% {color:blue;}
   70% {color:indigo;}
   84% {color:violet;}
+}
+@keyframes color {
+  0%,100% {background:red; }
+  14% {background: orange;}
+  28% {background: yellow;}
+  42% {background: green;}
+  56% {background: blue;}
+  70% {background: indigo;}
+  84% {background: violet;}
 }
